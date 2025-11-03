@@ -67,7 +67,7 @@ Built as a demonstration of modern mobile app development practices, this projec
 Before you begin, ensure you have the following installed:
 - **Node.js** (v16 or higher)
 - **npm** or **yarn** package manager
-- **Expo CLI**: `npm install -g expo-cli`
+- **Expo CLI**: `npm install -g @expo/cli`
 - **Expo Go App** (for testing on physical devices)
 - **Supabase Account** (free tier available at [supabase.com](https://supabase.com))
 
