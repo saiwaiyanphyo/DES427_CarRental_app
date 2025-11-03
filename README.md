@@ -1,50 +1,39 @@
-# Welcome to your Expo app 👋
+# Car Rental App (Expo + Supabase)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This app lets users sign up/login, search available cars for a single day in December 2025, book a car for that day, and view their own rentals.
 
-## Get started
+## Quick start
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1) Install dependencies
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2) Configure Supabase
 
-## Learn more
+- Create a Supabase project.
+- In the SQL Editor, run `scripts/supabase.sql` to create tables, policies, the `available_cars(date)` RPC, and seed a 20‑car fleet with sample December bookings.
+- Put your project URL and anon key in `app.config.ts` under `extra.EXPO_PUBLIC_SUPABASE_URL` and `extra.EXPO_PUBLIC_SUPABASE_ANON_KEY`.
 
-To learn more about developing your project with Expo, look at the following resources:
+3) Start the app
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm run start
+```
 
-## Join the community
+Open the app, sign up or log in, pick a date (Dec 2025), search, and book. The My Rentals tab shows your bookings with expected return dates.
 
-Join our community of developers creating universal apps.
+## Features
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Email/password auth with Supabase
+- Fleet of ≥20 cars (seeded) including make, model, color
+- Search available cars for a single day in December 2025
+- Confirm one‑day rentals and store renter name
+- View your rentals; no payment flow
+
+## Database overview
+
+- `cars` — catalog of vehicles
+- `bookings` — one‑day bookings; unique `(car_id, booking_date)`; `expected_return_date` defaults to `booking_date`
+- RPC `available_cars(day)` — returns cars not booked on `day`
