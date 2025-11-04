@@ -1,6 +1,6 @@
 # Car Rental App (Expo + Supabase)
 
-This app lets users sign up/login, search available cars for a single day in December 2025, book a car for that day, and view their own rentals.
+This app lets users sign up/login, search available cars, book a car for that day, and view their own rentals.
 
 ## Quick start
 
@@ -28,7 +28,7 @@ Open the app, sign up or log in, pick a date (Dec 2025), search, and book. The M
 
 - Email/password auth with Supabase
 - Fleet of ≥20 cars (seeded) including make, model, color
-- Search available cars for a single day in December 2025
+- Search available cars
 - Confirm one‑day rentals and store renter name
 - View your rentals; no payment flow
 
