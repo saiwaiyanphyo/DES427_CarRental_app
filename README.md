@@ -34,6 +34,9 @@ Open the app, sign up or log in, pick a date (Dec 2025), search, and book. The M
 
 ## Database overview
 
-- `cars` — catalog of vehicles
+![alt text](https://github.com/saiwaiyanphyo/DES427_CarRental_app/blob/main/supabase-schema-wclqzkbzttfybddadhtj.png)
+
 - `bookings` — one‑day bookings; unique `(car_id, booking_date)`; `expected_return_date` defaults to `booking_date`
+- `cars` — catalog of vehicles
 - RPC `available_cars(day)` — returns cars not booked on `day`
+
