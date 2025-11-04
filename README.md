@@ -13,8 +13,9 @@ npm install
 2) Configure Supabase
 
 - Create a Supabase project.
-- In the SQL Editor, run `scripts/supabase.sql` to create tables, policies, the `available_cars(date)` RPC, and seed a 20‑car fleet with sample December bookings.
+- In the SQL Editor, run `scripts/supabase.sql` to create tables, policies, the `available_cars(date)` RPC, and seed a 20‑car fleet.
 - Put your project URL and anon key in `app.config.ts` under `extra.EXPO_PUBLIC_SUPABASE_URL` and `extra.EXPO_PUBLIC_SUPABASE_ANON_KEY`.
+- Create a bucket `car-images` in Supabase and insert to `car` table. ( all images credit to rightful owners )
 
 3) Start the app
 
