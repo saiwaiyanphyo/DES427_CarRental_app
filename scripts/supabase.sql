@@ -112,7 +112,7 @@ as $$
       and day >= b.booking_date
       and day <= (b.expected_return_date)
   )
-  order by c.make, c.model;
+  order by c.id;
 $$;
 
 -- Seed at least 20 cars
